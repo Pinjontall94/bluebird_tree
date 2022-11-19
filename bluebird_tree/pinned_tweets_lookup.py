@@ -7,7 +7,7 @@ import json
 bearer_token = os.environ.get("BEARER_TOKEN")
 
 
-pinned_tweet_id_list = ["1587844587510501377", "1546628041073459201"]
+pinned_tweet_id_list = ["1278747501642657792", "1255542774432063488"]
 
 
 def batch_request(lst):
