@@ -1,5 +1,3 @@
-import numpy as np
-import pandas as pd
 import requests
 import os
 import json
@@ -7,12 +5,15 @@ import json
 # To set your environment variables in your terminal run the following line:
 # export 'BEARER_TOKEN'='<your_bearer_token>'
 bearer_token = os.environ.get("BEARER_TOKEN")
+follow_or_following = "following"
 
 
 def create_url():
     # Replace with user ID below
     user_id = 3326790620
-    return "https://api.twitter.com/2/users/{}/followers".format(user_id)
+    return "https://api.twitter.com/2/users/{}/{}".format(
+        user_id, follow_or_following
+    )
 
 
 def get_params():
