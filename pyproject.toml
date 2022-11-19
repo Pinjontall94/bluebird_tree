@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "blue_bird_tree"
+version = "0.1.0"
+description = ""
+authors = ["Sammi Johnson <sambjohnson94@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+selenium = "^4.6.0"
+numpy = "^1.23.4"
+pandas = "^1.5.1"
+requests = "^2.28.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+jupyter = "^1.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
