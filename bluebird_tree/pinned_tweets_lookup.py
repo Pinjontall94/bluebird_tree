@@ -1,3 +1,4 @@
+"""Read pinned_tweet_ids.txt and return the tweet contents as json."""
 import requests
 import os
 import json
@@ -7,7 +8,11 @@ import json
 bearer_token = os.environ.get("BEARER_TOKEN")
 
 
-pinned_tweet_id_list = ["1278747501642657792", "1255542774432063488"]
+def make_id_list(config_file):
+    """Return a list of tweet ids from a given text file (one id per line)."""
+    with open(config_file, 'r') as f:
+        pinned_tweet_id_list = [line.strip() for line in f]
+    return pinned_tweet_id_list
 
 
 def batch_request(lst):
@@ -31,8 +36,9 @@ def batch_request(lst):
             )
     return response.json()
 
+
 def single_request(lst):
-    "Iterate over a single list of <100 pinned tweets."
+    """Iterate over a single list of <100 pinned tweets."""
     # splice a nice comma-separated string of your tweet ids
     ids = "ids=" + ",".join(lst)
     tweet_fields = "tweet.fields=text,id"
@@ -51,22 +57,22 @@ def single_request(lst):
 
 
 def bearer_oauth(r):
-    """
-    Method required by bearer token authentication.
-    """
+    """Return bearer token authentication for requests."""
     r.headers["Authorization"] = f"Bearer {bearer_token}"
     r.headers["User-Agent"] = "v2TweetLookupPython"
     return r
 
 
 def main():
-    if len(pinned_tweet_id_list) > 100:
-        json_response = batch_request(pinned_tweet_id_list)
+    """Start executing here."""
+    id_list = make_id_list("bluebird_tree/pinned_tweet_ids.txt")
+    if len(id_list) > 100:
+        json_response = batch_request(id_list)
     else:
-        print("Len of pinned_tweet_id_list = {}".format(
-            len(pinned_tweet_id_list))
+        print("Len of id_list = {}".format(
+            len(id_list))
         )
-        json_response = single_request(pinned_tweet_id_list)
+        json_response = single_request(id_list)
     print(json.dumps(json_response, indent=4, sort_keys=True))
 
 
