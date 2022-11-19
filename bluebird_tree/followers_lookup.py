@@ -16,7 +16,7 @@ def create_url():
 
 
 def get_params():
-    return {"user.fields": ["description", "pinned_tweet_id"]}
+    return {"user.fields": "description,pinned_tweet_id"}
 
 
 def bearer_oauth(r):

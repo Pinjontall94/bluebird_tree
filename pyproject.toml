@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "blue_bird_tree"
+name = "bluebird_tree"
 version = "0.1.0"
 description = ""
 authors = ["Sammi Johnson <sambjohnson94@gmail.com>"]
