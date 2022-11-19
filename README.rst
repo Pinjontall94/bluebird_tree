@@ -18,7 +18,9 @@ to the following workflow:
 How To Run The Scripts
 ----------------------
 1. Run ``poetry install`` to install dependencies
-2. Get an api key from twitter, copy the bearer token, and run:
+2. Get an api key from `twitter
+   <https://developer.twitter.com/en/portal/petition/essential/basic-info>`_,
+   copy the bearer token, and run:
    ``export 'BEARER_TOKEN'='<your_bearer_token>'``
 3. Configure the scripts as needed (explained below)
 4. Run the scripts in the bluebird_tree folder from the project root like so:
