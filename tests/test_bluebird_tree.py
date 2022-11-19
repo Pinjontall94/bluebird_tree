@@ -1,4 +1,4 @@
-from blue_bird_tree import __version__
+from bluebird_tree import __version__
 
 
 def test_version():
