@@ -8,11 +8,18 @@ This software is very much in pre-alpha, but it should work if you adhere
 to the following workflow:
 
 1. Download python, if not already installed on your system
-   * If you're not sure, open a terminal and run ``python --version``
-   * If you don't see something like "Python 3.x.x" check
-   `here <https://www.python.org/downloads/>`_
-2. Download `poetry <https://python-poetry.org/docs/>`_
-3. Git clone this repository and open a terminal there
+
+* If you're not sure, open a terminal and run ``python --version``
+* If you don't see something like "Python 3.x.x" check `here <https://www.python.org/downloads/>`_
+
+2. Download `poetry <https://python-poetry.org/docs/>`_ and `git <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_
+3. Git clone this repository:
+
+   * Click the green button in the upper right of this page labelled "Code" and
+     copy the url
+   * Open a terminal in a folder on your computer (doesn't matter what folder),
+     and run: ``git clone <copied-url>``
+   * Run ``cd bluebird_tree``
 
 
 How To Run The Scripts
@@ -36,8 +43,8 @@ Configuration (i.e. "Twitter might die before I can write a nice UI for this")
 
 So considering time is of the essence, the followers_lookup.py file is
 configured by:
-* Editing the ``followers_or_following`` variable to either "followers" or
-"following"
+
+* Editing the ``followers_or_following`` variable to either "followers" or "following"
 
 Likewise the pinned_tweets_lookup.py script reads
 "bluebird_tree/pinned_tweet_ids.txt" (a file containing only one id per line;
